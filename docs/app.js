@@ -311,19 +311,7 @@
           m && u.unshift(m),
             r.search().host &&
               (u.unshift(r.search()),
-              (u[0].auth = { token: u[0].token, user: u[0].username, pass: u[0].password })),
-            -1 != ["http", "https"].indexOf(r.protocol()) &&
-              "localhost" != r.host() &&
-              u.push(
-                { host: r.host(), path: "/jsonrpc", port: 6800, encrypt: !1 },
-                {
-                  host: r.host(),
-                  port: r.port(),
-                  path: "/jsonrpc",
-                  encrypt: "https" == r.protocol()
-                },
-                { host: r.host(), port: r.port(), path: s.path, encrypt: "https" == r.protocol() }
-              );
+              (u[0].auth = { token: u[0].token, user: u[0].username, pass: u[0].password }));
           var g = !0,
             v = function() {
               clearTimeout(h), (h = null);

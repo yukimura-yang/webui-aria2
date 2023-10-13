@@ -37,28 +37,28 @@ export default angular
         };
       }
 
-      if (["http", "https"].indexOf(uri.protocol()) != -1 && uri.host() != "localhost") {
-        configurations.push(
-          {
-            host: uri.host(),
-            path: "/jsonrpc",
-            port: 6800,
-            encrypt: false
-          },
-          {
-            host: uri.host(),
-            port: uri.port(),
-            path: "/jsonrpc",
-            encrypt: uri.protocol() == "https"
-          },
-          {
-            host: uri.host(),
-            port: uri.port(),
-            path: authconf.path,
-            encrypt: uri.protocol() == "https"
-          }
-        );
-      }
+      // if (["http", "https"].indexOf(uri.protocol()) != -1 && uri.host() != "localhost") {
+      //   configurations.push(
+      //     {
+      //       host: uri.host(),
+      //       path: "/jsonrpc",
+      //       port: 6800,
+      //       encrypt: false
+      //     },
+      //     {
+      //       host: uri.host(),
+      //       port: uri.port(),
+      //       path: "/jsonrpc",
+      //       encrypt: uri.protocol() == "https"
+      //     },
+      //     {
+      //       host: uri.host(),
+      //       port: uri.port(),
+      //       path: authconf.path,
+      //       encrypt: uri.protocol() == "https"
+      //     }
+      //   );
+      // }
 
       // set if we got error on connection. This will cause another connection attempt.
       var needNewConnection = true;
